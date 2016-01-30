@@ -10,6 +10,6 @@ java -jar ProcedureSpider.jar>%new%
 set end_time=%time%
 
 set log=ProcedureScanner.log
-echo 日期： %ym%%today%, 起始时间：%start_time%，结束时间：%start_time%>>%log%
+echo 日期：%ym%%today%，起始时间：%start_time%，结束时间：%start_time%>>%log%
 fc /N %new% %old%>>%log%
 del %old%
