@@ -5,9 +5,11 @@ set /a yesterday=%date:~8,2% - 1
 set old=高阶表依赖关系(%ym%%yesterday%).txt
 set new=高阶表依赖关系(%ym%%today%).txt
 
-java -jar ProcedureSpider.jar>%new%&&echo 创建%new%成功。
+set start_time=%time%
+java -jar ProcedureSpider.jar>%new%
+set end_time=%time%
 
-fc %new% %old%
-if %errorlevel%==0 echo 删除%old%&&del %old%
-
-pause 
+set log=ProcedureScanner.log
+echo 日期： %ym%%today%, 起始时间：%start_time%，结束时间：%start_time%>>%log%
+fc /N %new% %old%>>%log%
+del %old%
