@@ -5,7 +5,7 @@ echo.
 
 for /r %%i in (*.*) do (
     if not "%%~xi"==".bat" if not "%%~xi"==".log" (
-        echo.>>%%i
+        echo=>>%%i
         echo %%i
     )
 )
